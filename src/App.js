@@ -1,19 +1,24 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { getUser } from "./Utilities/user-service";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import SignUpForm from "./Components/SignUpForm/SignUpForm";
-import LoginForm from "./Components/LoginForm/LoginForm";
+import HomePage from "./Pages/HomePage/HomePage";
+import AccountPage from "./Pages/AccountDetails/AccountPage";
+import SettingsPage from "./Pages/SettingsPage/Settings";
+import AuthPage from "./Pages/AuthPage/AuthPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
   return (
-    <div className="App">
-      <header className="App-header">
-        <SignUpForm setUser={setUser} />
-        <LoginForm setUser={setUser} />
-      </header>
-    </div>
+    <Routes>
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/account" element={<AccountPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
+      <Route
+        path="/signup"
+        element={<AuthPage setUser={setUser} user={user} />}
+      />
+    </Routes>
   );
 }
 
