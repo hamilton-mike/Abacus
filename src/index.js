@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './Pages/HomePage/HomePage';
 import AccountPage from './Pages/AccountDetails/AccountPage';
+import SettingsPage from './Pages/SettingsPage/Settings';
 
 const rootElement = document.getElementById('root')
 
@@ -15,6 +16,8 @@ ReactDOM.render(
       <Route path='/' element={<App />} />
       <Route path='/home' element={<HomePage />} />
       <Route path='/account' element={<AccountPage />} />
+      <Route path='/settings' element={<SettingsPage />} />
+
     </Routes>
   </BrowserRouter>, rootElement
 );
