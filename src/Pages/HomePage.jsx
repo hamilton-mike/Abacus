@@ -5,7 +5,6 @@ import FooterComponent from '../Components/Footer/FooterComponent'
 
 
 const HomePage = () => {
-    console.log('hello from the pther side');
   return (
     <>
         <nav>
