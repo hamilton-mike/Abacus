@@ -9,16 +9,28 @@ import AuthPage from "./Pages/AuthPage/AuthPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
+  const [logIn, setLogIn] = useState(true);
+
+  const toggle = () => {
+    setLogIn(x => !x)
+  }
+
   return (
-    <Routes>
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/account" element={<AccountPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
-      <Route
-        path="/signup"
-        element={<AuthPage setUser={setUser} user={user} />}
-      />
-    </Routes>
+    <div className="App">
+      <header className="App-header">
+        {logIn ? (
+          <>
+            <SignUpForm setUser={setUser} />
+            <button onClick={toggle}>Already a Member?</button>
+          </>
+        ) : (
+          <>
+            <LoginForm setUser={setUser} />
+            <button onClick={toggle}>Dont Have an Account?</button>
+          </>
+        )}
+      </header>
+    </div>
   );
 }
 
