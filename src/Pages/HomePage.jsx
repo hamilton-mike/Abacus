@@ -1,13 +1,10 @@
 import React from 'react'
 import { FcSettings } from 'react-icons/fc'
 import { MdNotifications } from 'react-icons/md'
-import { AiFillHome } from 'react-icons/ai'
-import { GoGraph } from 'react-icons/go'
-import { BsFillCreditCard2BackFill } from 'react-icons/bs'
-import { CgProfile } from 'react-icons/cg'
+import FooterComponent from '../Components/Footer/FooterComponent'
+
 
 const HomePage = () => {
-    console.log('hello from the pther side');
   return (
     <>
         <nav>
@@ -65,14 +62,7 @@ const HomePage = () => {
             </article>
         </sections>
 
-        <footer>
-            <ul>
-                  <li><AiFillHome /></li>
-                  <li><GoGraph /></li>
-                  <li><BsFillCreditCard2BackFill /></li>
-                  <li><CgProfile /></li>
-            </ul>
-        </footer>
+        <FooterComponent />
     </>
   )
 }

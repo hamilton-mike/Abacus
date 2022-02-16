@@ -7,11 +7,26 @@ import LoginForm from "./Components/LoginForm/LoginForm";
 
 function App() {
   const [user, setUser] = useState(getUser());
+  const [logIn, setLogIn] = useState(true);
+
+  const toggle = () => {
+    setLogIn(x => !x)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <SignUpForm setUser={setUser} />
-        <LoginForm setUser={setUser} />
+        {logIn ? (
+          <>
+            <SignUpForm setUser={setUser} />
+            <button onClick={toggle}>Already a Member?</button>
+          </>
+        ) : (
+          <>
+            <LoginForm setUser={setUser} />
+            <button onClick={toggle}>Dont Have an Account?</button>
+          </>
+        )}
       </header>
     </div>
   );

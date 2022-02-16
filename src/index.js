@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HomePage from './Pages/HomePage/HomePage';
-import AccountPage from './Pages/AccountDetails/AccountPage';
-import SettingsPage from './Pages/SettingsPage/Settings';
+import HomePage from './Pages/HomePage';
+import AccountPage from './Pages/AccountPage';
+import SettingsPage from './Pages/Settings';
 
 const rootElement = document.getElementById('root')
 
