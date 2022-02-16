@@ -30,9 +30,11 @@ function checkToken(req, res) {
 async function login(req, res) {
   try {
     const user = await User.findOne({ user: req.body.user });
+    console.log(req.body);
     console.log(user);
     if (!user) throw new Error();
     const match = await bcrypt.compare(req.body.password, user.password);
+    console.log(match);
     if (!match) throw new Error();
     res.json(createJWT(user));
   } catch {
