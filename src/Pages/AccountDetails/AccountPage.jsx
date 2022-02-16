@@ -36,7 +36,7 @@ const AccountPage = () => {
           <sections id="recent">
               <article>
                 <div>
-                    <h2></h2>
+                    <h2>Activities</h2>
                     <select name="" id="">
                         <option value="">January</option>
                         <option value="">February</option>
