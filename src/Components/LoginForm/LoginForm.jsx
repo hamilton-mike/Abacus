@@ -3,7 +3,7 @@ import * as usersService from "../../Utilities/user-service";
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
-    username: "",
+    user: "",
     password: "",
   });
   const [error, setError] = useState("");
@@ -33,8 +33,8 @@ export default function LoginForm({ setUser }) {
           <label>Username</label>
           <input
             type="text"
-            name="username"
-            value={credentials.username}
+            name="user"
+            value={credentials.user}
             onChange={handleChange}
             required
           />
