@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { getUser } from "./Utilities/user-service";
+import { useState } from "react";
+import SignUpForm from "./Components/SignUpForm/SignUpForm";
 
 function App() {
+  const [user, setUser] = useState(getUser());
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <SignUpForm setUser={setUser} />
       </header>
     </div>
   );

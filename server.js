@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
 
@@ -16,6 +17,7 @@ app.use(express.json());
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
+app.use("/api/users", require("./routes/User"));
 
 const port = process.env.PORT || 3001;
 
