@@ -3,6 +3,7 @@ import "./App.css";
 import { getUser } from "./Utilities/user-service";
 import { useState } from "react";
 import SignUpForm from "./Components/SignUpForm/SignUpForm";
+import LoginForm from "./Components/LoginForm/LoginForm";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -22,6 +23,7 @@ function App() {
           Learn React
         </a>
         <SignUpForm setUser={setUser} />
+        <LoginForm setUser={setUser} />
       </header>
     </div>
   );

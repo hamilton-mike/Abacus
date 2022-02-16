@@ -11,7 +11,6 @@ export async function signUp(userData) {
 export async function login(credentials) {
   const token = await usersAPI.login(credentials);
   localStorage.setItem("token", token);
-  console.log("token", token);
   return getUser();
 }
 
@@ -35,4 +34,10 @@ export function getUser() {
 
 export function logOut() {
   localStorage.removeItem("token");
+}
+
+/*-- This is not necessary in your MERN-Stack projects ---*/
+/*-- It's only to see how to send a token to the server ---*/
+export function checkToken() {
+  return usersAPI.checkToken().then((dateStr) => new Date(dateStr));
 }
