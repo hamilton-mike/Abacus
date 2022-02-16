@@ -17,15 +17,12 @@ app.use(express.json());
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
-app.use("/api/users", require("./routes/User"));
 
-const port = process.env.PORT || 3001;
+// Check if token and create req.user
+app.use(require("./config/checkToken"));
 
-app.listen(port, function () {
-  console.log(`Express app running on port ${port}`);
-});
-
-app.use(express.static(path.join(__dirname, "build")));
+// Put API routes here, before the "catch all" route
+app.use("/api/users", require("./routes/user"));
 
 // Put API routes here, before the "catch all" route
 
@@ -33,4 +30,10 @@ app.use(express.static(path.join(__dirname, "build")));
 // to return the index.html on all non-AJAX requests
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+const port = process.env.PORT || 3001;
+
+app.listen(port, function () {
+  console.log(`Express app running on port ${port}`);
 });

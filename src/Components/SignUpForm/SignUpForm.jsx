@@ -1,7 +1,8 @@
-import { Component } from "react/cjs/react.production.min";
-// Add this import
+import React, { Component } from "react";
 import { signUp } from "../../Utilities/user-service";
+
 export default class SignUpForm extends Component {
+  // class field syntax
   state = {
     name: "",
     user: "",
@@ -9,22 +10,16 @@ export default class SignUpForm extends Component {
     confirm: "",
     error: "",
   };
-  // The object passed to setState is merged with the current state object
+
   handleSubmit = async (evt) => {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // We don't want to send the 'error' or 'confirm' property,
-      //  so let's make a copy of the state object, then delete them
+      // We don't want to send the confirm or error properties
+      // Let's make a copy of this.state (we never want to directly modify the state obj)
       const formData = { ...this.state };
       delete formData.error;
       delete formData.confirm;
-      // The promise returned by the signUp service method
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await signUp(formData);
-      // Baby step!
-      console.log(user);
       this.props.setUser(user);
     } catch {
       // An error occurred
@@ -33,12 +28,18 @@ export default class SignUpForm extends Component {
   };
 
   handleChange = (evt) => {
+    // Unlike setters in function components,
+    // this.setState MERGES the provided object, it does
+    // NOT replace it
     this.setState({
       [evt.target.name]: evt.target.value,
       error: "",
     });
   };
 
+  // Must override the render method
+  // The render method take the place of a function component
+  // That is, it will ultimately return its UI as JSX
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
