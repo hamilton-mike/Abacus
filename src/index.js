@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './Pages/HomePage/HomePage';
+import AccountPage from './Pages/AccountDetails/AccountPage';
 
 const rootElement = document.getElementById('root')
 
@@ -13,6 +14,7 @@ ReactDOM.render(
     <Routes>
       <Route path='/' element={<App />} />
       <Route path='/home' element={<HomePage />} />
+      <Route path='/account' element={<AccountPage />} />
     </Routes>
   </BrowserRouter>, rootElement
 );
