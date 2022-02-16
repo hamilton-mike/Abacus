@@ -5,11 +5,13 @@ import { CgProfile } from 'react-icons/cg'
 import { RiTicket2Fill } from 'react-icons/ri'
 import { MdNotificationsActive } from 'react-icons/md'
 import { MdOutlineSettingsInputComposite } from 'react-icons/md'
+import HeaderComponent from '../Components/Header/HeaderComponent'
 import FooterComponent from '../Components/Footer/FooterComponent'
 
 const SettingsPage = () => {
   return (
     <>
+        <HeaderComponent />
         <nav>
             <h1>Settings</h1>
 
