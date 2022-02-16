@@ -1,9 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { getUser } from "./Utilities/user-service";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import SignUpForm from "./Components/SignUpForm/SignUpForm";
-import LoginForm from "./Components/LoginForm/LoginForm";
+import HomePage from "./Pages/HomePage/HomePage";
+import AccountPage from "./Pages/AccountDetails/AccountPage";
+import SettingsPage from "./Pages/SettingsPage/Settings";
+import AuthPage from "./Pages/AuthPage/AuthPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
