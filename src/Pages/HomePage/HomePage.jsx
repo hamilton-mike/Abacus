@@ -2,8 +2,8 @@ import React from 'react'
 import { FcSettings } from 'react-icons/fc'
 import { MdNotifications } from 'react-icons/md'
 import { AiFillHome } from 'react-icons/ai'
-import { BsFillCreditCard2BackFill } from 'react-icons/bs'
 import { GoGraph } from 'react-icons/go'
+import { BsFillCreditCard2BackFill } from 'react-icons/bs'
 import { CgProfile } from 'react-icons/cg'
 
 const HomePage = () => {
