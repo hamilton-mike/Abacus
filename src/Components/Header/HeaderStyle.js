@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Header = styled.section`
-    border-bottom: 1em solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 8px 8px -8px gray;
 `
 
 export const Container = styled.article`
