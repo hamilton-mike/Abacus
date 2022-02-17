@@ -14,3 +14,7 @@ export const BG = styled.section`
 background-color: white;
 margin: 10em 0;
 `
+
+export const LabelStyle = styled.label`
+font-family: 'Bakbak One', cursive;
+`

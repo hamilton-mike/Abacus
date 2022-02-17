@@ -10,3 +10,6 @@ border-radius: 25%;
 background-color: #CFA4FB;
 `
 
+export const LabelStyle = styled.label `
+font-family: 'Bakbak One', cursive;
+`
