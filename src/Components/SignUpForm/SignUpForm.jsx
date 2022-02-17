@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { InputStyle, BtnStyle, BG } from "./SignUpFormStyles.js";
 import { signUp } from "../../Utilities/user-service";
 
 export default class SignUpForm extends Component {
@@ -43,11 +44,11 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
+      <BG>
         <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
-            <input
+            <InputStyle
               type="text"
               name="name"
               value={this.state.name}
@@ -55,7 +56,7 @@ export default class SignUpForm extends Component {
               required
             />
             <label>Username</label>
-            <input
+            <InputStyle
               type="text"
               name="user"
               value={this.state.user}
@@ -63,7 +64,7 @@ export default class SignUpForm extends Component {
               required
             />
             <label>Password</label>
-            <input
+            <InputStyle
               type="password"
               name="password"
               value={this.state.password}
@@ -71,20 +72,20 @@ export default class SignUpForm extends Component {
               required
             />
             <label>Confirm</label>
-            <input
+            <InputStyle
               type="password"
               name="confirm"
               value={this.state.confirm}
               onChange={this.handleChange}
               required
             />
-            <button type="submit" disabled={disable}>
+            <BtnStyle type="submit" disabled={disable}>
               SIGN UP
-            </button>
+            </BtnStyle>
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
+      </BG>
     );
   }
 }
