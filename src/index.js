@@ -13,7 +13,12 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path='/' element={<App />} />
+      <Route path='/home' element={<HomePage />} />
+      <Route path='/account' element={<AccountPage />} />
+      <Route path='/settings' element={<SettingsPage />} />
+    </Routes>
   </BrowserRouter>,
   rootElement
 );
