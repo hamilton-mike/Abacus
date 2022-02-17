@@ -21,17 +21,15 @@ function App() {
       <img id="abacus-logo" src={Logo} />
       <header className="App-header">
         {logIn ? (
-          <>
-            <div className="hi">
-              <SignUp />
-              <button onClick={toggle}>Already a Member?</button>
-            </div>
-          </>
+          <div className="hi">
+            <SignUp />
+            <button onClick={toggle}>Already a Member?</button>
+          </div>
         ) : (
-          <>
+          <div className="hi">
             <LoginForm setUser={setUser} />
-            <button onClick={toggle}>Dont Have an Account?</button>
-          </>
+            <button onClick={toggle}>Not a Member?</button>
+          </div>
         )}
       </header>
     </div>

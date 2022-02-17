@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import HomePage from './Pages/HomePage';
 import AccountPage from './Pages/AccountPage';
 import EducationPage from './Pages/Education';
+import CalculatorPage from './Pages/Calculator';
 
 
 const rootElement = document.getElementById("root");
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Route path='/home' element={<HomePage />} />
       <Route path='/account' element={<AccountPage />} />
       <Route path='/education' element={<EducationPage />} />
+      <Route path='/calculator' element={<CalculatorPage />} />
     </Routes>
   </BrowserRouter>,
   rootElement
