@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Abacus f/k/a Saving for Shuffleboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Abacus, the friendly retirement savings app!
 
-## Available Scripts
+![Abacus Logo](/src/imgs/abacus_logo.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## __Conceptual Screenshots__
+##### Abacus Sign In Page
+![Abacus Sign In Page](/src/imgs/abacus_signup.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### Abacus Home Page
+![Abacus Home Page](/src/imgs/abacus_home.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### Abacus Info Page
+![Abacus Info Page](/src/imgs/abacus_info.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## __Technologies__
+* CSS
+* Express
+* Heroku
+* Mongoose
+* Node
+* React
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## __Resources__
+Click the following hyperlink to view Abacus:
+* [Abacus]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Abacus Trello Board:
+* [Trello Board](https://trello.com/b/fMiPZsq8/golden-lords-planning-board)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Abacus Figma Board:
+* [Figma Board](https://www.figma.com/file/L5ZeJBoU5zs7rulbBwwGof/budget?node-id=6%3A12)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## __Future Enhancements__
+* Enable user functionality for entering transactions
+* Transfer of money between accounts for users

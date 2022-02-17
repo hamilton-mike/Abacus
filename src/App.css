@@ -21,3 +21,7 @@
   align-content: center;
   margin-top: 5em;
 }
+
+svg {
+  position: sticky;
+}
