@@ -5,7 +5,6 @@ import { Balance, Article, Hero, HeroArticle } from './BalanceStyles'
 import { Unordered } from '../../Footer/FooterStyle'
 
 const BalanceComponent = () => {
-<<<<<<< HEAD
     return (
         <>
             <Balance>
@@ -27,29 +26,6 @@ const BalanceComponent = () => {
             </Balance>
         </>
     )
-=======
-  return (
-      <>
-        <Balance>
-            <Article>
-                <Unordered>
-                    <li><FcSettings /></li>
-                    <li>Home</li>
-                    <li><MdNotifications /></li>
-                </Unordered>
-
-                <Hero>
-                    <HeroArticle>
-                        <h1>Balance of your <br /> Abacus Account</h1>
-
-                        <span>$15,560.00</span>
-                    </HeroArticle>
-                </Hero>
-            </Article>
-        </Balance>
-      </>
-  )
->>>>>>> mike-branch
 }
 
 export default BalanceComponent

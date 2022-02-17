@@ -1,7 +1,6 @@
 import React from 'react'
 import { RecentSection, Activities, Transactions } from './RecentStyles';
 import { FaCoins } from 'react-icons/fa'
-import { Flex } from '../../../globalStyles'
 
 const RecentComponent = () => {
   return (

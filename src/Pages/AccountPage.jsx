@@ -12,10 +12,10 @@ const AccountPage = () => {
         <DetailsComponent />
         <ActivitiesComponent />
 
-        <section id="graph">
+        {/* <section id="graph">
             <h1>Balance</h1>
             <span>$15,560.00</span>
-        </section>
+        </section> */}
 
         <RecentComponent />
         <FooterComponent />
