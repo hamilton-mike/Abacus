@@ -12,5 +12,5 @@ background-color: #CFA4FB;
 
 export const BG = styled.section`
 background-color: white;
-// margin: 10em 0;
+margin: 10em 0;
 `

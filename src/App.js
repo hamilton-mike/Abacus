@@ -1,4 +1,3 @@
-
 import { getUser } from "./Utilities/user-service";
 import { useState } from "react";
 import SignUpForm from "./Components/SignUpForm/SignUpForm";
