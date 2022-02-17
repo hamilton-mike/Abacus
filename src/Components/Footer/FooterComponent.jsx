@@ -22,7 +22,7 @@ const FooterComponent = () => {
   }
 
   const cal = () => {
-    navigate('/cal')
+    navigate('/calculator')
   }
 
   const iconColor = {
