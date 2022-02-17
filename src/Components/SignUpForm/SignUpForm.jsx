@@ -47,30 +47,42 @@ export default class SignUpForm extends Component {
       <BG>
         <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>Name</label>
-            <InputStyle
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Username</label>
-            <InputStyle
-              type="text"
-              name="user"
-              value={this.state.user}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Password</label>
-            <InputStyle
-              type="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
-            />
+            <div>
+              <label>Name</label>
+              <InputStyle
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label>Username</label>
+              <InputStyle
+                type="text"
+                name="user"
+                value={this.state.user}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label>Password</label>
+              <InputStyle
+                type="password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+
+            <div>
+
+            </div>
             <label>Confirm</label>
             <InputStyle
               type="password"
