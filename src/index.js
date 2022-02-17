@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './Pages/HomePage';
 import AccountPage from './Pages/AccountPage';
-import SettingsPage from './Pages/Settings';
+import EducationPage from './Pages/Education';
 
 
 const rootElement = document.getElementById("root");
@@ -14,12 +14,13 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/account' element={<AccountPage />} />
-        <Route path='/settings' element={<SettingsPage />} />
+      <Route path='/' element={<App />} />
+      <Route path='/home' element={<HomePage />} />
+      <Route path='/account' element={<AccountPage />} />
+      <Route path='/education' element={<EducationPage />} />
     </Routes>
-  </BrowserRouter>, rootElement
+  </BrowserRouter>,
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
