@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InputStyle = styled.input`
-border-radius: 25%; 
+border-radius: 20%; 
 ` 
 
 

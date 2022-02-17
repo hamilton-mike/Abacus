@@ -4,7 +4,6 @@ import { MdNotifications } from 'react-icons/md'
 import FooterComponent from '../Components/Footer/FooterComponent'
 import HeaderComponent from '../Components/Header/HeaderComponent'
 
-
 const HomePage = () => {
   return (
     <>

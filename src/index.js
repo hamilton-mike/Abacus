@@ -13,9 +13,13 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  rootElement
+    <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/account' element={<AccountPage />} />
+        <Route path='/settings' element={<SettingsPage />} />
+    </Routes>
+  </BrowserRouter>, rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
