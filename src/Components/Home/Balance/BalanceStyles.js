@@ -17,19 +17,11 @@ export const HeroArticle = styled.article`
     background-color: #8438FF;
     height: 100%;
     border-radius: 30px;
-<<<<<<< HEAD
-=======
-
->>>>>>> mike-branch
     h1, span {
         margin-left: 4em;
         padding-top: 2em;
         color: white;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> mike-branch
     span {
         font-size: 2em;
     }
