@@ -1,4 +1,3 @@
-import "./App.css";
 import { getUser } from "./Utilities/user-service";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";

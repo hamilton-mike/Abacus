@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InputStyle, BtnStyle } from "./LoginFormStyles.js";
 import * as usersService from "../../Utilities/user-service";
 
 export default function LoginForm({ setUser }) {
@@ -31,7 +32,7 @@ export default function LoginForm({ setUser }) {
       <div className="form-container" onSubmit={handleSubmit}>
         <form autoComplete="off">
           <label>Username</label>
-          <input
+          <InputStyle
             type="text"
             name="user"
             value={credentials.user}
@@ -39,16 +40,16 @@ export default function LoginForm({ setUser }) {
             required
           />
           <label>Password</label>
-          <input
+          <InputStyle
             type="password"
             name="password"
             value={credentials.password}
             onChange={handleChange}
             required
           />
-          <button type="submit" className="button">
+          <BtnStyle type="submit" className="button">
             LOG IN
-          </button>
+          </BtnStyle>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
