@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsArrowLeftCircleFill } from 'react-icons/bs'
 import HeaderComponent from '../Components/Header/HeaderComponent'
+import FooterComponent from '../Components/Footer/FooterComponent'
 
 const AccountPage = () => {
   return (
@@ -74,6 +75,7 @@ const AccountPage = () => {
                   </div>
               </article>
           </sections>
+          <FooterComponent />
       </>
   )
 }
