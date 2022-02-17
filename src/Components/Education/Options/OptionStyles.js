@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 export const OptionsSection = styled.section`
-    // border: 2px solid red;
 `;
 
 export const Options = styled.article`
     background-color: #F1D7F1;
-    margin: 1em;
+    margin: 5em 1em 7em 1em;
     border-radius: 30px;
 `;
 

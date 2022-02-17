@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Footer = styled.footer`
-    border: 2px solid red;
+    border: 3px solid gray;
 `;
 
 export const Unordered = styled.ul`

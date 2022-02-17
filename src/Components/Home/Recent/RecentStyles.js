@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const RecentSection = styled.section`
-margin: 2em;
+    margin: 2em 2em 5.5em 2em;
 `;
 
 export const Activities = styled.article`
-margin-right: 1em;
+    margin-top: 6em;
+    margin-right: 1em;
 `;
 
 export const Transactions = styled.div`
