@@ -11,7 +11,7 @@ const RecentComponent = () => {
                 <Transactions>
                     <FaCoins style={{ margin: '1.5em 0' }}/>
                     <ul>
-                        <li>Netflix Membership</li>
+                      <li>Roth IRA auto pay</li>
                         <li>02.16.2022</li>
                     </ul>
                     <span>- $29.90</span>
@@ -20,7 +20,7 @@ const RecentComponent = () => {
                 <Transactions>
                   <FaCoins style={{ margin: '1.5em 0' }} />
                     <ul>
-                        <li>Netflix Membership</li>
+                      <li>10% Xfer to IRA"</li>
                         <li>02.16.2022</li>
                     </ul>
                     <span> - $16.00</span>
