@@ -13,3 +13,8 @@ background-color: #CFA4FB;
 export const LabelStyle = styled.label `
 font-family: 'Bakbak One', cursive;
 `
+
+export const DivStyle = styled.div `
+display:flex;
+align-content: center;
+`
