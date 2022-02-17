@@ -14,6 +14,7 @@ export const CalcStyle = styled.div `
 export const Section = styled.section `
     justify-content: center;
     align-items: center;
+    margin-bottom: 11em;
 `
 
 export const Btn = styled.button `
