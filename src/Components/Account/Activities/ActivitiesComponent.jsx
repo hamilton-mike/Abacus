@@ -1,9 +1,10 @@
 import React from 'react'
+import { Section } from './ActivitiesStyles'
 
 const ActivitiesComponent = () => {
   return (
       <>
-        <section id="recent">
+        <Section id="recent">
             <article>
               <div>
                   <h2>Activities</h2>
@@ -23,7 +24,7 @@ const ActivitiesComponent = () => {
                   </select>
               </div>
             </article>
-        </section>
+        </Section>
       </>
   )
 }

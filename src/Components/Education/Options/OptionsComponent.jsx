@@ -3,9 +3,9 @@ import { OptionsSection, Options, Card, Icon } from './OptionStyles'
 import { FaPiggyBank, FaBriefcaseMedical } from 'react-icons/fa'
 import { HiOutlineSupport } from 'react-icons/hi'
 import { Flex } from '../../../globalStyles'
+
 const OptionsComponent = () => {
     const [text, setText] = useState(true)
-
 
     const toggleText = e => {
         e.preventDefault();
@@ -21,7 +21,6 @@ const OptionsComponent = () => {
     }
 
     const read = (text) ? none : color;
-
     const btnContent = (text) ? 'Read More...' : 'Read Less...';
 
     return (
