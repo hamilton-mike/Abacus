@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const InputStyle = styled.input`
-    display: block;
-    padding: 0.6em;
-    margin-left: 1em;
-    margin-top: 2em;
+    padding: 0.6em 1em;
     border-radius: 20px;
 `
-export const Dblock = styled.form`
-    display: inline-block;
+export const Dblock = styled.div`
+    padding: 2em 0 6em 0;
 `;
 
 export const BtnStyle = styled.button`
@@ -16,10 +13,20 @@ export const BtnStyle = styled.button`
     background-color: #CFA4FB;
 `
 
-export const BG = styled.section`
-    margin: 10em 0;
+export const LabelStyle = styled.label`
+    margin-right: 6em;
 `
 
-export const LabelStyle = styled.label`
-    font-family: 'MuseoModerno', cursive;
-`
+export const ConfirmStyle = styled.label`
+    margin-right: 7em;
+`;
+
+export const FormDiv = styled.div`
+    margin: 2em 0;
+    display: grid;
+    place-items: center;
+`;
+
+export const Submit = styled.input`
+    margin-right: 2em;
+`;

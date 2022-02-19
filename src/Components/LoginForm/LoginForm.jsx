@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
-import { InputStyle, BtnStyle, BG, Dblock, LabelStyle } from '../SignUpForm/SignUpFormStyles'
+import { InputStyle, FormDiv, Dblock, LabelStyle } from '../SignUpForm/SignUpFormStyles'
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -10,18 +10,21 @@ const LoginForm = () => {
   }
   return (
     <>
-      <Dblock onSubmit={homePage}>
-        <div>
+      <div onSubmit={homePage}>
+        <FormDiv>
           <LabelStyle htmlFor="uname">Username</LabelStyle>
           <InputStyle type="text" placeholder='Username' required name='uname' />
-        </div>
+        </FormDiv>
 
-        <div>
+        <FormDiv>
           <LabelStyle htmlFor="pw">Password</LabelStyle>
           <InputStyle type="password" placeholder='Password' required name='pw' />
+        </FormDiv>
+
+        <Dblock>
           <InputStyle type="submit" value="Sign In" />
-        </div>
-      </Dblock>
+        </Dblock>
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { InputStyle, BtnStyle, BG, Dblock , LabelStyle} from "./SignUpFormStyles";
+import { InputStyle, LabelStyle, FormDiv, ConfirmStyle } from "./SignUpFormStyles";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -11,23 +11,26 @@ const SignUp = () => {
 
     return (
         <>
-            <Dblock onSubmit={homePage}>
-                <div>
+            <div onSubmit={homePage}>
+                <FormDiv>
                     <LabelStyle htmlFor="uname">Username</LabelStyle>
-                    <InputStyle type="text" placeholder='Username' required name='uname'/>
-                </div>
+                    <InputStyle type="text" required name='uname'/>
+                </FormDiv>
 
-                <div>
+                <FormDiv>
                     <LabelStyle htmlFor="pw">Password</LabelStyle>
-                    <InputStyle type="password" placeholder='Password' required name='pw'/>
-                </div>
+                    <InputStyle type="password" required name='pw'/>
+                </FormDiv>
 
-                <div>
-                    <LabelStyle htmlFor="pw2">Confirm</LabelStyle>
-                    <InputStyle type="password" placeholder='Confirm Password' required name='pw2'/>
+                <FormDiv>
+                    <ConfirmStyle htmlFor="pw2">Confirm</ConfirmStyle>
+                    <InputStyle type="password" required name='pw2'/>
+                </FormDiv>
+
+                <FormDiv>
                     <InputStyle type="submit" value="Register" />
-                </div>
-            </Dblock>
+                </FormDiv>
+            </div>
         </>
     )
 }
