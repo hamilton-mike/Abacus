@@ -6,7 +6,9 @@ const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 9000;
 
+const userController = require('./controllers/user-restful');
 
+const urlArray = ['https://localhost:3000'];
 const corsOptions = {
     "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
     "preflightContinue": false,
@@ -23,4 +25,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use('/user', userController)
+
 app.listen(PORT, () => console.log(`listening on port: ${PORT}`));

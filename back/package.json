@@ -1,6 +1,9 @@
 {
-  "name": "back",
+  "name": "Abacus Back-end",
   "version": "1.0.0",
+  "engines": {
+    "node": "v14.17.3"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {

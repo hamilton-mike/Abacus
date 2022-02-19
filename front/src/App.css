@@ -1,0 +1,21 @@
+.App {
+  display: block;
+  height: 52px;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  font-family: 'MuseoModerno', cursive;
+}
+
+#abacus-logo {
+  margin-top: 2em;
+}
+
+.hi {
+  padding: 3em;
+}
+
+span {
+  text-decoration: underline;
+}
