@@ -29,13 +29,6 @@ const SignUp = () => {
         }
     }
 
-    // name:
-    // username:
-    // password:
-    // income:
-    // debt:
-    // age:
-
     return (
         <>
             <form onSubmit={handleSubmit}>
