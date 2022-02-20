@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { InputStyle, LabelStyle, FormDiv, ConfirmStyle, EmailStyle } from "./SignUpFormStyles";
 import axios from 'axios';
 
 const SignUp = () => {
     const init = { email: '', pw: '', pw2: '' };
-    // const navigate = useNavigate();
-    // navigate('/home')
+    const navigate = useNavigate();
     const [userInput, setUserInput] = useState(init)
 
     const handleChange = e => {
@@ -24,6 +23,8 @@ const SignUp = () => {
                 username: obj.email,
                 password: obj.pw2
             });
+            console.log(formData);
+            // (formData.status === 200) ? navigate('/home') : navigate('/wrong')
         } catch (error) {
             console.error(error);
         }

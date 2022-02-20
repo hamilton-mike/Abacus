@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/UserSchema');
-const { log } = require('npmlog');
 
 router.get('/', async (req, res) => {
     try {
@@ -13,10 +12,9 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body.username });
-        console.log(user, 'hit');
+        const user = await User.findOne({ username: req.body.username, password: req.body.password });
         res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error.message })
