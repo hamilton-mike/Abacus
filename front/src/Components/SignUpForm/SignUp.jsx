@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { InputStyle, LabelStyle, FormDiv, ConfirmStyle, EmailStyle } from "./SignUpFormStyles";
 import axios from 'axios';
 
 const SignUp = () => {
     const init = { email: '', pw: '', pw2: '' };
+    const [userInput, setUserInput] = useState(init);
     const navigate = useNavigate();
-    const [userInput, setUserInput] = useState(init)
 
     const handleChange = e => {
         setUserInput({ ...userInput, [e.target.name]: e.target.value })
@@ -23,24 +23,27 @@ const SignUp = () => {
                 username: obj.email,
                 password: obj.pw2
             });
-            console.log(formData);
-            // (formData.status === 200) ? navigate('/home') : navigate('/wrong')
+            (formData.data === null) ? navigate('/') : navigate('/form');
         } catch (error) {
             console.error(error);
         }
     }
 
+    useEffect(() => {
+        makeUser()
+    })
+
     return (
         <>
             <form onSubmit={handleSubmit}>
                 <FormDiv>
-                    <EmailStyle htmlFor="pw">Email</EmailStyle>
+                    <EmailStyle htmlFor="email">Email</EmailStyle>
                     <InputStyle type="email" required name='email' onChange={handleChange} />
                 </FormDiv>
 
                 <FormDiv>
                     <LabelStyle htmlFor="pw">Password</LabelStyle>
-                    <InputStyle type="password" required name='pw'  onChange={handleChange} />
+                    <InputStyle type="password" required name='pw' onChange={handleChange} />
                 </FormDiv>
 
                 <FormDiv>
@@ -55,6 +58,5 @@ const SignUp = () => {
         </>
     )
 }
-// After signup do popup so user can fill form for app
 
 export default SignUp
