@@ -3,7 +3,7 @@ const str = { type: String };
 const num = { type: Number };
 
 const userSchema = mongoose.Schema({
-    name: { type: String, require: true },
+    name: str,
     username: str,
     password: str,
     income: num,

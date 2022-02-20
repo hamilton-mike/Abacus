@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/UserSchema');
+const { log } = require('npmlog');
 
 router.get('/', async (req, res) => {
     try {
@@ -12,9 +13,10 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/login', async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findOne({ username: req.body.username });
+        console.log(user, 'hit');
         res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -28,7 +30,7 @@ router.post('/signup', async (req, res) => {
         const duplicates = users.filter(obj => obj.username === newUser.username);
         const hash = await bcrypt.hash(newUser.password, 10);
         newUser.password = hash;
-        (duplicates.length > 1) ? res.redirect('https://abacus-ga.netlify.app/') : res.status(200).json(newUser);
+        (duplicates.length > 1) ? await User.findByIdAndRemove(newUser._id) : res.status(200).json(newUser);
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
