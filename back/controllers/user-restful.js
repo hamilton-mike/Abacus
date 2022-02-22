@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const JWT = require('jsonwebtoken');
 const User = require('../models/UserSchema');
+
 
 router.get('/', async (req, res) => {
     try {
@@ -15,6 +17,7 @@ router.get('/', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ username: req.body.username, password: req.body.password });
+        console.log(user, 'success');
         res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -23,14 +26,26 @@ router.post('/login', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-        const newUser = await User.create(req.body);
-        const users = await User.find();
-        const duplicates = users.filter(obj => obj.username === newUser.username);
-        const hash = await bcrypt.hash(newUser.password, 10);
-        newUser.password = hash;
-        (duplicates.length > 1) ? await User.findByIdAndRemove(newUser._id) : res.status(200).json(newUser);
+        const hash = await bcrypt.hash(req.body.password, 10);
+        const user = { username: req.body.username, password: hash };
+        const create = await User.create(user);
+
+        const users = await User.find({ username: create.username });
+        const duplicates = users.filter(obj => obj.username === create.username);
+        // const token = await JWT.sign({ username }, 'minubg865d4s3w5xecyrutviybou89', { expiresIn: 90000 });
+        // console.log(createUser, 'jwt', token);
+        if (duplicates.length > 1) {
+            users.map(async user => {
+                if (user.username === create.username) {
+                    await User.findByIdAndRemove(user._id);
+                }
+            })
+        } else {
+            res.setHeader('Content-Type', 'text/html')
+            return res.sendStatus(200).json(user);
+        }
     } catch (error) {
-        res.status(400).json({ error: error.message })
+        res.sendStatus(400).json({ error: error.message })
     }
 })
 
