@@ -4,7 +4,7 @@ import { InputStyle, LabelStyle, FormDiv, ConfirmStyle, EmailStyle } from "./Sig
 import axios from 'axios';
 
 const SignUp = () => {
-    const init = { email: '', pw: '', pw2: '' };
+    const init = { name: '', pw: '', pw2: '' };
     const [userInput, setUserInput] = useState(init);
     const navigate = useNavigate();
 
@@ -19,10 +19,12 @@ const SignUp = () => {
 
     const makeUser = async obj => {
         try {
+            console.log(obj);
             const formData = await axios.post('http://localhost:9000/user/signup', {
-                username: obj.email,
+                username: obj.name,
                 password: obj.pw2
             });
+            console.log(formData, '-----');
             (formData.data === null) ? navigate('/') : navigate('/form');
         } catch (error) {
             console.error(error);
@@ -37,8 +39,8 @@ const SignUp = () => {
         <>
             <form onSubmit={handleSubmit}>
                 <FormDiv>
-                    <EmailStyle htmlFor="email">Email</EmailStyle>
-                    <InputStyle type="email" required name='email' onChange={handleChange} />
+                    <EmailStyle htmlFor="name">Email</EmailStyle>
+                    <InputStyle type="email" required name='name' onChange={handleChange} />
                 </FormDiv>
 
                 <FormDiv>

@@ -31,9 +31,10 @@ const UserFormPage = () => {
 
     const abacus = async () => {
         try {
-            const users = await axios('http://localhost:9000/user');
+            const users = await axios('http://localhost:9000/user/first');
             const usersArray = users.data;
-            const { _id } = usersArray[usersArray.length - 1];
+            const { _id } = usersArray;
+            console.log(usersArray);
             setId(_id)
         } catch (error) {
             console.error(error);
@@ -47,8 +48,7 @@ const UserFormPage = () => {
                 name,
                 income,
                 debt,
-                age,
-                id
+                age
             });
             navigate('/home')
         } catch (error) {

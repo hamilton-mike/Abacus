@@ -1,9 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const JWT = require('jsonwebtoken');
 const User = require('../models/UserSchema');
-
+const obj = [];
 
 router.get('/', async (req, res) => {
     try {
@@ -14,11 +14,23 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/first', async (req, res) => {
+    try {
+        const user = obj[obj.length - 1]
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+})
+
 router.post('/login', async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body.username, password: req.body.password });
-        console.log(user, 'success');
-        res.status(200).json(user);
+        const user = await User.findOne({ username: req.body.username });
+
+        if (await bcrypt.compare(req.body.password, user.password)) {
+            res.status(200).json(user);
+        }
+
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -29,11 +41,9 @@ router.post('/signup', async (req, res) => {
         const hash = await bcrypt.hash(req.body.password, 10);
         const user = { username: req.body.username, password: hash };
         const create = await User.create(user);
-
         const users = await User.find({ username: create.username });
         const duplicates = users.filter(obj => obj.username === create.username);
-        // const token = await JWT.sign({ username }, 'minubg865d4s3w5xecyrutviybou89', { expiresIn: 90000 });
-        // console.log(createUser, 'jwt', token);
+
         if (duplicates.length > 1) {
             users.map(async user => {
                 if (user.username === create.username) {
@@ -41,11 +51,12 @@ router.post('/signup', async (req, res) => {
                 }
             })
         } else {
-            res.setHeader('Content-Type', 'text/html')
-            return res.sendStatus(200).json(user);
+            obj.push(create)
+            res.status(200).json(create);
         }
+
     } catch (error) {
-        res.sendStatus(400).json({ error: error.message })
+        res.status(400).json({ error: error.message })
     }
 })
 
@@ -60,7 +71,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const destroyUser = await User.findByIdAndRemove(req.params.id)
+        const destroyUser = await User.findByIdAndRemove(req.params.id);
         res.status(200).json(destroyUser);
     } catch (error) {
         res.status(400).json({ error: error.message })

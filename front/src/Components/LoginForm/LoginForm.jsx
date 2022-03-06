@@ -4,13 +4,9 @@ import { InputStyle, FormDiv, Dblock, LabelStyle } from '../SignUpForm/SignUpFor
 import axios from 'axios';
 
 const LoginForm = () => {
-  const init = { uname: '', pw: '' };
+  const init = { email: '', pw: '' };
   const [userInput, setUserInput] = useState(init)
   const navigate = useNavigate();
-
-  const homePage = () => {
-    navigate('/home')
-  }
 
   const handleChange = e => {
     setUserInput({ ...userInput, [e.target.name]: e.target.value })
@@ -24,9 +20,10 @@ const LoginForm = () => {
   const checkCredentials = async obj => {
     try {
       const formData = await axios.post('http://localhost:9000/user/login', {
-        username: obj.uname,
+        username: obj.email,
         password: obj.pw
       });
+      console.log(formData);
       (formData.data === null) ? navigate('/') : navigate('/home');
     } catch (error) {
       console.error(error);
@@ -37,8 +34,8 @@ const LoginForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <FormDiv>
-          <LabelStyle htmlFor="uname">Username</LabelStyle>
-          <InputStyle type="text" placeholder='Username' required name='uname' onChange={handleChange} />
+          <LabelStyle htmlFor="email">Username</LabelStyle>
+          <InputStyle type="text" placeholder='Username' required name='email' onChange={handleChange} />
         </FormDiv>
 
         <FormDiv>
