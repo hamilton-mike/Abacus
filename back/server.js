@@ -10,10 +10,6 @@ const userController = require('./controllers/user-restful');
 
 const urlArray = ['http://localhost:3000'];
 const corsOptions = {
-    // "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
-    // "preflightContinue": false,
-    // "optionsSuccessStatus": 204,
-    // "allowedHeaders": ["Content-Type"],
     origin: (origin, cb) => {
         if (urlArray.indexOf(origin) != -1 || !origin) {
             cb(null, true)

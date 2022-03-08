@@ -3,26 +3,25 @@ import { useNavigate } from 'react-router-dom'
 import { BsBookHalf, BsPerson } from 'react-icons/bs'
 import { AiOutlineCalculator } from 'react-icons/ai'
 import { AiFillHome } from 'react-icons/ai'
-import { RedBorder } from '../../globalStyles'
 import { Unordered, Footer } from './FooterStyle'
 
-const FooterComponent = () => {
+const FooterComponent = ({ id }) => {
   const navigate = useNavigate();
 
   const home = () => {
-    navigate('/home')
+    navigate(`/${id}/home`)
   }
 
   const account = () => {
-    navigate('/account')
-  }
-
-  const edu = () => {
-    navigate('/education')
+    navigate(`/${id}/account`)
   }
 
   const cal = () => {
-    navigate('/calculator')
+    navigate(`/${id}/calculator`)
+  }
+
+  const edu = () => {
+    navigate(`/${id}/education`)
   }
 
   const iconColor = {

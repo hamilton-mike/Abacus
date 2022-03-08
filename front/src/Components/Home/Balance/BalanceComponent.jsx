@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FcSettings } from 'react-icons/fc'
 import { MdNotifications } from 'react-icons/md'
-import { Balance, Article, Hero, HeroArticle } from './BalanceStyles'
-import { Unordered } from '../../Footer/FooterStyle'
+import { Balance, Article, Hero, HeroArticle, Unordered } from './BalanceStyles'
 
-const BalanceComponent = () => {
+const BalanceComponent = ({ income }) => {
+    const balance = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    }).format(income);
+
     return (
         <>
             <Balance>
@@ -18,8 +22,7 @@ const BalanceComponent = () => {
                     <Hero>
                         <HeroArticle>
                             <h1>Balance of your <br /> Abacus Account</h1>
-
-                            <span>$15,560.00</span>
+                            <span>{balance}</span>
                         </HeroArticle>
                     </Hero>
                 </Article>

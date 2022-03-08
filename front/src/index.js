@@ -7,7 +7,8 @@ import HomePage from './Pages/HomePage';
 import AccountPage from './Pages/AccountPage';
 import EducationPage from './Pages/Education';
 import CalculatorPage from './Pages/Calculator';
-import UserFormPage from './Pages//UserForm/UserFormPage'
+import UserFormPage from './Pages//UserForm/UserFormPage';
+import TransactionPage from './Pages/TransactionPage';
 
 const rootElement = document.getElementById("root");
 
@@ -15,11 +16,13 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />} />
-      <Route path='form' element={<UserFormPage />} />
-      <Route path='/home' element={<HomePage />} />
-      <Route path='/account' element={<AccountPage />} />
-      <Route path='/education' element={<EducationPage />} />
-      <Route path='/calculator' element={<CalculatorPage />} />
+      <Route path='/:id/form' element={<UserFormPage />} />
+      <Route path='/:id/home' element={<HomePage />} />
+      <Route path='/:id/account' element={<AccountPage />} />
+      <Route path='/:id/calculator' element={<CalculatorPage />} />
+      <Route path='/:id/education' element={<EducationPage />} />
+      <Route path='/:id/transaction' element={<TransactionPage />} />
+      <Route path='/error' element={<CalculatorPage />} />
     </Routes>
   </BrowserRouter>,
   rootElement

@@ -42,14 +42,9 @@ router.post('/signup', async (req, res) => {
         const user = { username: req.body.username, password: hash };
         const create = await User.create(user);
         const users = await User.find({ username: create.username });
-        const duplicates = users.filter(obj => obj.username === create.username);
 
-        if (duplicates.length > 1) {
-            users.map(async user => {
-                if (user.username === create.username) {
-                    await User.findByIdAndRemove(user._id);
-                }
-            })
+        if (users.length > 1) {
+            users.map(async user => await User.findByIdAndRemove(user._id))
         } else {
             obj.push(create)
             res.status(200).json(create);

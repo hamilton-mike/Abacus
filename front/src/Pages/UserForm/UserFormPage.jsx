@@ -34,7 +34,6 @@ const UserFormPage = () => {
             const users = await axios('http://localhost:9000/user/first');
             const usersArray = users.data;
             const { _id } = usersArray;
-            console.log(usersArray);
             setId(_id)
         } catch (error) {
             console.error(error);
@@ -50,7 +49,7 @@ const UserFormPage = () => {
                 debt,
                 age
             });
-            navigate('/home')
+            navigate(`/${id}/home`)
         } catch (error) {
             console.error(error);
         }

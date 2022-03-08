@@ -14,6 +14,7 @@ const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log('hit')
     checkCredentials(userInput)
   }
 
@@ -23,10 +24,10 @@ const LoginForm = () => {
         username: obj.email,
         password: obj.pw
       });
-      console.log(formData);
-      (formData.data === null) ? navigate('/') : navigate('/home');
+      navigate(`/${formData.data._id}/home`);
     } catch (error) {
-      console.error(error);
+      navigate('/error');
+      console.error(error, 'error');
     }
   }
 

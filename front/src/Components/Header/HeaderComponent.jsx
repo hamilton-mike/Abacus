@@ -1,14 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { One, Two, LineOne, LineTwo, Container, Logo, Arrow, Header } from './HeaderStyle'
-import { Flex, RedBorder } from '../../globalStyles'
 
 const HeaderComponent = () => {
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    navigate('/')
+  }
+
   return (
     <Header>
       <Container>
         <Arrow>
-          <AiOutlineArrowLeft />
+          <AiOutlineArrowLeft  onClick={logOut}/>
         </Arrow>
 
         <Logo>

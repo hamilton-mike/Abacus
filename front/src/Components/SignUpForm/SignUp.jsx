@@ -24,8 +24,7 @@ const SignUp = () => {
                 username: obj.name,
                 password: obj.pw2
             });
-            console.log(formData, '-----');
-            (formData.data === null) ? navigate('/') : navigate('/form');
+            navigate(`/${formData.data._id}/form`);
         } catch (error) {
             console.error(error);
         }

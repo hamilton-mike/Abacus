@@ -1,29 +1,29 @@
 import styled from 'styled-components'
 
 export const ActionsSection = styled.section`
+    background: red;
 `;
 
 export const AA  = styled.article`
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5em;
 `;
 
 export const Actions = styled.ul`
     display: flex;
 
     li {
-        padding-bottom: 0.5em;
-        border-radius: 20%;
+        margin: 1em;
+        border-radius: 23%;
         list-style: none;
         text-align: center;
     }
 `;
 
 export const Btn = styled.li`
-    margin-right: 1em;
-    padding: 1em;
+    padding: 0.7em;
     background: #5e6e92;
     margin-bottom: 0.5em;
 `;
