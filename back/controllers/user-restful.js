@@ -14,6 +14,15 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try {
+        const userById = await User.findById(req.params.id);
+        res.status(200).json(userById);
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+})
+
 router.get('/first', async (req, res) => {
     try {
         const user = obj[obj.length - 1]

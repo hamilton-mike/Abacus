@@ -35,7 +35,7 @@ const HomePage = () => {
         <HeaderComponent />
         <BalanceComponent income={userData.income}/>
         <ActionsComponent id={userData._id}/>
-        <RecentComponent data={userData}/>
+        <RecentComponent id={userData._id}/>
         <FooterComponent id={userData._id}/>
       </>
     )}

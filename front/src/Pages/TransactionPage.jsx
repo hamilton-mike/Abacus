@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import HeaderComponent from '../Components/Header/HeaderComponent';
 import FooterComponent from '../Components/Footer/FooterComponent';
@@ -10,6 +10,7 @@ const TransactionPage = () => {
     const [userInput, setUserInput] = useState(init)
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
     const params = useParams();
     const { id } = params;
 
@@ -41,7 +42,7 @@ const TransactionPage = () => {
                 date: obj.date,
                 amount: obj.amount
             })
-            console.log(id == '6229700a914a1128c78c3a20');
+            navigate(`/${id}/home`)
         } catch (error) {
             console.error(error);
         }
@@ -83,11 +84,8 @@ const TransactionPage = () => {
                             </form>
                         </FormDiv>
                     </Article>
-
-                    <div style={{ position: 'absolute', bottom: 0 }}>
-                        <FooterComponent id={userData._id}/>
-                    </div>
                 </Section>
+                <FooterComponent id={userData._id} />
             </>
         )}
         </>
