@@ -7,6 +7,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 9000;
 
 const userController = require('./controllers/user-restful');
+const actionController = require('./controllers/action-restful');
 
 const urlArray = ['http://localhost:3000'];
 const corsOptions = {
@@ -22,5 +23,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/user', userController)
+app.use('/action', actionController)
 
 app.listen(PORT, () => console.log(`listening on port: ${PORT}`));

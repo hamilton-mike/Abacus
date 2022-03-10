@@ -9,7 +9,8 @@ const userSchema = mongoose.Schema({
     password: str,
     income: num,
     debt: num,
-    age: num
+    age: num,
+    action: { type: mongoose.Types.ObjectId, ref: 'Action' }
 })
 
 module.exports = mongoose.model('User', userSchema);
