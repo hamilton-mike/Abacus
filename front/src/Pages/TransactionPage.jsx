@@ -35,12 +35,13 @@ const TransactionPage = () => {
 
     const sendToBackend = async obj => {
         try {
-            const mongo = await axios.post('http://localhost:9000/action', {
+            await axios.post('http://localhost:9000/action', {
+                user: id,
                 name: obj.name,
                 date: obj.date,
                 amount: obj.amount
             })
-            console.log(mongo, 'hit');
+            console.log(id == '6229700a914a1128c78c3a20');
         } catch (error) {
             console.error(error);
         }
