@@ -1,20 +1,27 @@
 import styled from 'styled-components';
 
+export const HeaderOne = styled.h1`
+    margin: 1em 2em 0 2em;
+`;
+
 export const RecentSection = styled.section`
-    margin: 2em 2em 5.5em 2em;
+    margin: 2em 2em 1em 2em;
+    height: 29.2vh;
+    overflow: auto;
 `;
 
 export const Activities = styled.article`
-    margin-top: 6em;
-    margin-right: 1em;
+   background-color: lightgreen;
+   padding: 1em;
 `;
 
 export const Transactions = styled.div`
-    display: flex;
-    margin-left: 1em;
-    padding-left: 1em;
+   display: flex;
+   margin-left: 1em;
+   padding-left: 1em;
 
-    ul li {
+   ul li {
+        margin: 1em;
         list-style: none;
     }
 

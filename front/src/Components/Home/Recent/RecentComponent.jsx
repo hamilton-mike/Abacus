@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { RecentSection, Activities, Transactions } from './RecentStyles';
+import { RecentSection, Activities, Transactions, HeaderOne } from './RecentStyles';
 import { FaCoins } from 'react-icons/fa'
 import axios from 'axios'
 
@@ -10,8 +10,8 @@ const RecentComponent = ({ id }) => {
   const getActions = async () => {
     try {
       const actions = await axios(`http://localhost:9000/action`);
-      setTrans(actions.data)
-      console.log(trans, id,  'act');
+      const userTransactions = actions.data.filter(obj => obj.user === id)
+      setTrans(userTransactions)
     } catch (error) {
       console.error(error);
     }
@@ -22,20 +22,23 @@ const RecentComponent = ({ id }) => {
   }, [])
 
   return (
-    <RecentSection>
-      <Activities>
-        <h1>Recent Activities</h1>
-
-        <Transactions>
-          <FaCoins style={{ margin: '1.5em 0' }} />
-            <ul>
-              <li>10% Xfer to IRA"</li>
-                <li>02.16.2022</li>
+    <>
+      <HeaderOne>Recent Activities</HeaderOne>
+      <RecentSection>
+        <Activities>
+        {trans.map(action => (
+          <Transactions>
+            <FaCoins style={{ marginTop: '1.5em' }} />
+            <ul key={action._id}>
+              <li>{action.name.toUpperCase()}</li>
+              <li>{action.date}</li>
             </ul>
-            <span> - $16.00</span>
-        </Transactions>
-      </Activities>
-    </RecentSection>
+            <span>- ${action.amount}</span>
+          </Transactions>
+        ))}
+        </Activities>
+      </RecentSection>
+    </>
   )
 }
 
