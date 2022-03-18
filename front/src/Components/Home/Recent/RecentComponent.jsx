@@ -17,7 +17,6 @@ const RecentComponent = ({ id }) => {
     }
   }
 
-
   useEffect(() => {
     getActions()
   }, [])
@@ -34,7 +33,7 @@ const RecentComponent = ({ id }) => {
               <li>{action.name.toUpperCase()}</li>
               <li>{action.date}</li>
             </ul>
-            <span>- ${action.amount}</span>
+            <span>- {action.amount}</span>
           </Transactions>
         ))}
         </Activities>

@@ -15,7 +15,7 @@ const BalanceComponent = ({ income, id }) => {
     const getAllTransactions = async () => {
         try {
             const getRequest = await axios('http://localhost:9000/action');
-            const filterById = getRequest.data.filter(obj => obj.user === id);
+            const filterById = await getRequest.data.filter(obj => obj.user === id);
             subTotal(filterById)
         } catch (error) {
             console.error(error);
@@ -23,8 +23,9 @@ const BalanceComponent = ({ income, id }) => {
     }
 
     const subTotal = arr => {
-        const convert = arr.map(obj => parseInt(obj.amount))
-        const balance = convert.reduce((acc, el) => {
+        const remove$ = arr.map(obj => obj.amount.substring(1));
+        const number = remove$.map(str => parseInt(str));
+        const balance = number.reduce((acc, el) => {
             return acc += el;
         }, 0);
         setNewBalance(balance);

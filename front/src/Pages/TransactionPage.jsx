@@ -17,16 +17,20 @@ const TransactionPage = () => {
     const handleChange = e => {
         setUserInput({ ...userInput, [e.target.name]: e.target.value })
     }
-
     const handleSubmit = e => {
         e.preventDefault();
+        const amount = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(userInput.amount)
+        userInput["amount"] = amount;
         sendToBackend(userInput);
     }
 
     const fromBackend = async () => {
         try {
             const users = await axios('http://localhost:9000/user');
-            const userById = users.data.filter(user => user._id === id);
+            const userById = await users.data.filter(user => user._id === id);
             setUserData(userById['0']);
             setLoading(false)
         } catch (error) {
@@ -75,7 +79,7 @@ const TransactionPage = () => {
                                 </FormSection>
 
                                 <FormSection>
-                                    <InputStyle type="text" placeholder='amount' name='amount' required onChange={handleChange} />
+                                    <InputStyle type='number' placeholder='amount' name='amount' required onChange={handleChange} />
                                 </FormSection>
 
                                 <FormSection>
