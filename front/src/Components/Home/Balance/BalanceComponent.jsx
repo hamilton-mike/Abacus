@@ -1,13 +1,38 @@
-import React, { useEffect } from 'react'
-import { FcSettings } from 'react-icons/fc'
-import { MdNotifications } from 'react-icons/md'
-import { Balance, Article, Hero, HeroArticle, Unordered } from './BalanceStyles'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { FcSettings } from 'react-icons/fc';
+import { MdNotifications } from 'react-icons/md';
+import { Balance, Article, Hero, HeroArticle, Unordered } from './BalanceStyles';
 
-const BalanceComponent = ({ income }) => {
+const BalanceComponent = ({ income, id }) => {
+    const [newBalance, setNewBalance] = useState(null);
+
     const balance = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
-    }).format(income);
+    }).format(income - newBalance);
+
+    const getAllTransactions = async () => {
+        try {
+            const getRequest = await axios('http://localhost:9000/action');
+            const filterById = getRequest.data.filter(obj => obj.user === id);
+            subTotal(filterById)
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const subTotal = arr => {
+        const convert = arr.map(obj => parseInt(obj.amount))
+        const balance = convert.reduce((acc, el) => {
+            return acc += el;
+        }, 0);
+        setNewBalance(balance);
+    }
+
+    useEffect(() => {
+        getAllTransactions()
+    }, [])
 
     return (
         <>

@@ -33,7 +33,7 @@ const HomePage = () => {
     { loading ? <h1>hi</h1> : (
       <>
         <HeaderComponent />
-        <BalanceComponent income={userData.income}/>
+        <BalanceComponent income={userData.income} id={userData._id}/>
         <ActionsComponent id={userData._id}/>
         <RecentComponent id={userData._id}/>
         <FooterComponent id={userData._id}/>

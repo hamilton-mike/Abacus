@@ -11,11 +11,12 @@ const RecentComponent = ({ id }) => {
     try {
       const actions = await axios(`http://localhost:9000/action`);
       const userTransactions = actions.data.filter(obj => obj.user === id)
-      setTrans(userTransactions)
+      setTrans(userTransactions.reverse())
     } catch (error) {
       console.error(error);
     }
   }
+
 
   useEffect(() => {
     getActions()
