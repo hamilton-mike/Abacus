@@ -9,6 +9,7 @@ import EducationPage from './Pages/Education';
 import CalculatorPage from './Pages/Calculator';
 import UserFormPage from './Pages//UserForm/UserFormPage';
 import TransactionPage from './Pages/TransactionPage';
+import NewsPage from './Pages/NewsPage';
 
 const rootElement = document.getElementById("root");
 
@@ -22,7 +23,7 @@ ReactDOM.render(
       <Route path='/:id/calculator' element={<CalculatorPage />} />
       <Route path='/:id/education' element={<EducationPage />} />
       <Route path='/:id/transaction' element={<TransactionPage />} />
-      <Route path='/error' element={<CalculatorPage />} />
+      <Route path='/:id/news' element={<NewsPage />} />
     </Routes>
   </BrowserRouter>,
   rootElement

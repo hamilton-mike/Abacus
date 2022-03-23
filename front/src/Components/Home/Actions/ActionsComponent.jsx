@@ -4,6 +4,7 @@ import { ActionsSection, AA, Actions, Btn } from './ActionsStyle';
 import { FcMoneyTransfer } from 'react-icons/fc';
 import { GoGraph } from 'react-icons/go';
 import { HiOutlineDocumentText} from 'react-icons/hi';
+import axios from 'axios'
 
 const ActionsComponent = ({ id }) => {
     const navigate = useNavigate();
@@ -16,9 +17,10 @@ const ActionsComponent = ({ id }) => {
         navigate(`/${id}/education`)
     }
 
-    const edu = () => {
-        console.log('news api')
+    const latestNews = () => {
+        navigate(`/${id}/news`)
     }
+
 
     return (
         <ActionsSection>
@@ -34,7 +36,7 @@ const ActionsComponent = ({ id }) => {
                         <li>Retirement <br /> Accounts</li>
                     </ul>
 
-                    <ul onClick={edu}>
+                    <ul onClick={latestNews}>
                         <Btn><HiOutlineDocumentText size={35}  /></Btn>
                         <li>More <br /> Learning...</li>
                     </ul>
